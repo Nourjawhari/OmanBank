@@ -11,8 +11,11 @@
 /*General variables*/
 
 :root {
-    --card-title-color: #0066cc;
-    --secondarydark-bg-color: #0066cc;
+    --primary-color: #7c1424;
+    --secondary-color: #08244c;
+    --card-title-color: #7c1424;
+    --navbar-font-size: 16px;
+    --secondarydark-bg-color: #08244c;
     --primary-bg-color : #edf0f4;
     --border-bottom-header-color: #EAECF0;
     --card-bg-color: white;
@@ -32,7 +35,7 @@
     --button-height: 45px;
     --button-icon-size: 20px;
     --loading-color : #dfdfdf;
-    --table-header-background-color: #388ce1;
+    --table-header-background-color: #08244c;
     /* Icons url*/
     --file--icon: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/file.png");
     --download-icon: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/download.png");
@@ -50,35 +53,23 @@
 
 /* HEADER  STYLING */
 
-div[name="Navbar"] {
+div[name*="Navbar"] {
     position: fixed !important;
-    top: 60px;
+    top: 0;
     width: 100%;
     right: 0;
     z-index: 100;
     overflow: visible;
 }
 
-div[name="Navbar"] * {
-    background-color: white;
+div[name*="Navbar"] * {
+    background-color: var(--secondary-color);
 }
 
 [name="UserName"] {
     color: var(--card-title-color);
 }
 
-/* TRANSLATOR STYLING */
-
-[name="TranslatorHeader"] {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-
-[name="TranslatorHeader"] span {
-    background: var(--secondarydark-bg-color) !important;
-}
 
 /* Form Boundaries */
 
@@ -160,7 +151,7 @@ div[name*="Card"] .grid-header-wrapper{
 /* labelInputSpecialContainer is a k2 control has icon */
 
 span[name*= "labelInputContainer"] textarea {
-    font-size: var(--inout-font-size) !important;
+    font-size: var(--input-font-size) !important;
     padding: 10px!important;
 }
 
@@ -170,11 +161,11 @@ span[name*= "labelInputSpecialContainer"]{
 }
 
 /* Label styling */
-span[name*= "labelInputContainer"] span:first,
-span[name*= "labelInputSpecialContainer"] span:first{
+span[name*= "labelInputContainer"] > span,
+span[name*= "labelInputSpecialContainer"] > span{
     font-size: var(--input-font-size) !important;
     font-weight: bold;
-    color: black !important;
+    color: var(--secondary-color) !important;
     margin-bottom: 4px !important;
 }
 
@@ -212,37 +203,62 @@ span[name*= "labelInputContainer"] .input-control-m-c .editable-area.input-contr
     height: 100% !important;
 }
 
-/*Runtime Arabic*/
+/* Tabs Styling */
 
-.RuntimeAR span[name*= "labelInputContainer"] .input-control-m-c,
-.RuntimeAR span[name*= "labelInputSpecialContainer"] .input-control-wrapper a span{
-    padding: 0px 10px!important;
+ul.tab-box-tabs {
+    padding: 0px !important;
+    width: 100% !important;
+    position: fixed !important;
+    top: 110px;
+    right: 0;
+    box-sizing: border-box;
+    z-index: 100 !important;
+    outline: 1px solid #cccccc !important;
+    background: white;
+   
+    
+}
+ul.tab-box-tabs li:has(.selected) {
+       border-bottom: 2px solid var(--card-title-color);
+}  
+ul.tab-box-tabs li {
+   padding: 7px !important;
+    margin-left: 15px !important;
 }
 
-span[name*= "labelInputContainer"] input,
-[name*= "FileNameAttachmentInput"] {
-    padding: 0px 10px  !important;
+ul.tab-box-tabs .selected {
+    background: transparent !important;
 }
 
-.RuntimeEN span[name*= "labelInputContainer"] .input-control-watermark,
-.RuntimeEN span[name*= "labelInputCalenderContainer"] .input-control-watermark,
-.RuntimeEN span[name*= "labelInputContainer"] input,
-.RuntimeEN span[name*= "labelInputSpecialContainer"] input,
-.RuntimeEN [name*= "FileNameAttachmentInput"],
-.RuntimeEN span[name*= "labelInputContainer"] textarea,
-.RuntimeEN span[name*= "labelInputSpecialContainer"] .input-control-wrapper a span{
-    text-align: left !important;
+ul.tab-box-tabs a.selected  span {
+    color: var(--card-title-color) !important;
+
 }
 
-.RuntimeAR span[name*= "labelInputContainer"] .input-control-watermark,
-.RuntimeAR span[name*= "labelInputCalenderContainer"] .input-control-watermark,
-.RuntimeAR span[name*= "labelInputContainer"] input,
-.RuntimeAR span[name*= "labelInputSpecialContainer"] input,
-.RuntimeAR [name*= "FileNameAttachmentInput"],
-.RuntimeAR span[name*= "labelInputContainer"] textarea,
-.RuntimeAR span[name*= "labelInputSpecialContainer"] .input-control-wrapper a span{
-    text-align: right !important;
+ul.tab-box-tabs li a span {
+    background: transparent !important;
+    font-size: var(--navbar-font-size);
 }
+
+span[name*= "BtnStyleContainer"] a,
+.theme-entry a.SourceCode-Forms-Controls-Web-Button.disabled,
+.theme-entry a.SourceCode-Forms-Controls-Web-Button.disabled.designtime,
+.theme-entry a.SourceCode-Forms-Controls-Web-Button.disabled.preview,
+.theme-entry a.SourceCode-Forms-Controls-Web-Button.disabled:hover,
+.theme-entry a.SourceCode-Forms-Controls-Web-Button.disabled:hover:focus,
+.theme-entry a.SourceCode-Forms-Controls-Web-Button.disabled:focus{
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    border: 1px solid var(--primary-color) !important;
+    height: 30px;
+}
+
+span[name*= "addStyleContainer"] a:hover {
+    filter: grayscale(-20%);
+}
+
 
 span[name*= "labelInputContainer"] input,
 [name*= "FileNameAttachmentInput"]{
@@ -559,3 +575,12 @@ div[name*= "CardListViewWithAdd"] .grid-header {
 .RuntimeAR.row:has([name*="Card"]) .innerpanel {
     margin: 0px !important
 }
+
+
+[name*="Submit"], 
+[name *= "Cancel"] {
+    background: #7c1424 !important;
+    border: 1px solid #7c1424 !important;
+}
+
+
