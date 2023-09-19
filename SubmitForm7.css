@@ -25,7 +25,7 @@
     --card-border-input-color: #D0D5DD;
     --card-height: 60;
     --input-border-radius: 8px;
-    --input-height: 38px;
+    --input-height: 36px;
     --input-font-size: 14px;
     --icon-size: 25px;
     --icon-special-input-size: 20px;
@@ -184,8 +184,7 @@ span[name*= "labelInputSpecialContainer"] .input-control-wrapper .editable-area.
 } */
 
 span[name*= "labelInputContainer"] input,
-span[name*= "labelInputContainer"] .input-control-m-c,
-[name*= "FileNameAttachmentInput"]{
+span[name*= "labelInputContainer"] .input-control-m-c{
     border-radius: var(--input-border-radius) !important;
     border: 1px solid var(--card-border-input-color) !important;
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
@@ -193,8 +192,7 @@ span[name*= "labelInputContainer"] .input-control-m-c,
 
 span[name*= "labelInputContainer"] input,
 span[name*= "labelInputSpecialContainer"] input,
-span[name*= "labelInputContainer"] .input-control-m-c,
-[name*= "FileNameAttachmentInput"]{
+span[name*= "labelInputContainer"] .input-control-m-c{
     font-size: var(--input-font-size) !important;
 } 
 
@@ -206,9 +204,9 @@ span[name*= "labelInputContainer"] .input-control-m-c .editable-area.input-contr
     height: 100% !important;
 }
 
-span[name*= "labelInputSpecialContainer"] .input-control-buttons a:hover {
+/* span[name*= "labelInputSpecialContainer"] .input-control-buttons a:hover {
     background: transparent !important;
-}
+} */
 
 /* Tabs Styling */
 
@@ -245,6 +243,11 @@ span[name*= "labelInputSpecialContainer"] .input-control-buttons a:hover {
 .basicForm ul.tab-box-tabs li a span {
     background: transparent !important;
     font-size: var(--navbar-font-size);
+}
+
+/* Delete the line-break in the select recipient card*/
+.basicForm .line-break.clearFloatFix {
+    display: none !important;
 }
 
 span[name*= "BtnStyleContainer"] a,
@@ -293,13 +296,12 @@ span[name*= "labelInputSpecialContainer"] > div {
     padding: 0px 10px;
 }
 
-span[name*= "labelInputSearchContainer"] a {
-    padding-top: 20px !important;
+span[name*= "labelInputSearchContainer"] .input-control-buttons.styling-right.styling-inner-wrapper {
+    padding-top: 10px !important;
 } 
 
 /* Change and style the calender icon*/
-span[name*= "labelInputCalenderContainer"] .input-control-buttons a,
-div[name*="AttachmentsTable"] div[name*= "Calendar"] .input-control-buttons a{
+span[name*= "labelInputCalenderContainer"] .input-control-buttons a{
     content: var(--calendar-icon);
     width: var(--icon-special-input-size) !important;
     height: var(--icon-special-input-size) !important; 
@@ -310,9 +312,7 @@ div[name*="AttachmentsTable"] div[name*= "Calendar"] .input-control-buttons a{
 /* ------LIST VIEW WITH SPECIAL INPUT LIKE PICKER< CALENDER-------*/
 /*Search and input in the list view styling*/
 
-div[name*= "AttachmentsTable"] .picker,
-input[name*= "ListViewInputControl"],
-div[name*="AttachmentsTable"] div[name*= "Calendar"]{
+input[name*= "ListViewInputControl"]{
     display: flex !important;
     align-items: center;
     border: 1px solid var(--card-border-input-color) !important;
@@ -323,90 +323,6 @@ div[name*="AttachmentsTable"] div[name*= "Calendar"]{
 
 input[name*= "ListViewInputControl"] {
     height: 32px !important;
-}
-
-div[name*= "AttachmentsTable"] .picker,
-div[name*= "Calendar"]{
-    height: 30px;
-}
-
-div[name*= "AttachmentsTable"] .picker .input-control .input-control-m-c,
-div[name*= "AttachmentsTable"] .picker .input-control .input-control-buttons,
-div[name*= "Calendar"].input-control .input-control-m-c,
-div[name*= "Calendar"].input-control .input-control-buttons{
-    border: none !important;
-}
-
-
-/*Attachment field styling*/
-
-span[name*= "labelInputContainer"] div[name*="FileAttachmentIcon"],
-div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"],
-div[name*="AttachmentsTable"] div[name*= "ListViewAttachmentControl"]{
-    width: 100% !important;
-    height: var(--input-height) !important;
-    border-radius: var(--input-border-radius);
-    border: 1px dashed var(--card-border-input-color) !important;
-}
-
-span[name*= "labelInputContainer"] div[name*="FileAttachmentIcon"] table,
-div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"] table,
-div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"].active table{
-    width: 100% !important;
-}
-
-span[name*= "labelInputContainer"] div[name*="FileAttachmentIcon"] table td,
-div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"] table td,
-div[name*="AttachmentsTable"] div[name*= "ListViewAttachmentControl"] table td{
-    width: 100% !important;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0px;
-}
-
-span[name*= "labelInputContainer"] div[name*="FileAttachmentIcon"] table td img,
-div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"] table td img,
-div[name*="AttachmentsTable"] div[name*= "ListViewAttachmentControl"] table td img{
-    width: var(--icon-size) !important;
-    height: var(--icon-size) !important;
-    content: var(--download-icon);
-    margin: 8px 2px;
-}
-
-div[name*="FileAttachmentIcon"].file-wrapper.no-info.uploaded table td {
-    justify-content: flex-start;
-    align-content: center !important;
-}
-
-div[name*="FileAttachmentIcon"].file-wrapper.no-info.uploaded table td img {
-    width: var(--icon-size) !important;
-    height: calc(var(--icon-size) - 5%) !important;
-    content: var(--file--icon);
-    margin-left: 5px;
-    margin-top: 5px !important;
-}
-
-div[name*= "FileAttachmentIcon"] .file-delete {
-    width: calc(var(--icon-size)- 10%) !important;
-    height: calc(var(--icon-size) - 10%) !important;
-    margin-top: 7px !important;
-    content: var(--trash-icon);
-}
-
-.RuntimeAR div[name*= "FileAttachmentIcon"] .file-delete {
-    right: auto !important;
-    left: 0 !important;
-}
-
-/*Display space betwen two fields in the same row */
-
-span[name*="leftComponent"] {
-    margin-right: 1rem;
-}
-
-span[name*="rightComponent"] {
-    margin-left: 1rem;
 }
 
 a[name*= "Btn"] {
@@ -440,17 +356,13 @@ a[name*= "Btn"] {
     margin-left: 10px; 
 }
 
-/* Change the loading icon color in the attachment field*/
-.theme-entry .file-progress-wrapper>svg circle:nth-child(1){
-    fill: var(--loading) !important;
-}
 
-div[name*= "AttachmentsTable"] .first {
+div[name*= "ListViewTable"] .first {
     height: 38px !important;
 
 }
 
-div[name*= "AttachmentsTable"] .first a,
+div[name*= "ListViewTable"] .first a,
 div[name*= "DisplayTable"] .first a{
     text-decoration: none;
     color: black;
@@ -462,43 +374,36 @@ div[name*= "DisplayTable"] .first a{
     align-items: center;
 }
 
-div[name*= "AttachmentsTable"] .first a::before,
+div[name*= "ListViewTable"] .first a::before,
 div[name*= "DisplayTable"] .first a::before{
     content: var(--file-resize-icon);
     margin-right: 5px !important;
 }
 
-div[name*= "AttachmentsTable"] .last .grid-content-cell-wrapper {
+div[name*= "ListViewTable"] .last .grid-content-cell-wrapper {
     text-align: center;
 }
 
-div[name*="AttachmentsTable"] a[name*="Delete"] .button-icon,
-div[name*="AttachmentsTable"] a[name*="Add"] .button-icon {
+div[name*="ListViewTable"] a[name*="Delete"] .button-icon,
+div[name*="ListViewTable"] a[name*="Add"] .button-icon {
     background-position: 20px !important;
     min-height: 0px !important;
 }
 
 /*Add margin between the icon and the word in arabic runtime in the list view*/
-.RuntimeAR div[name*="AttachmentsTable"] .button-text{
+.RuntimeAR div[name*="ListViewTable"] .button-text{
     margin-right : 5px !important;
 }
 
-/*Change the ADD icon*/
-div[name*="AttachmentsTable"] a[name*="Add"] .button-icon {
-    content: var(--plus-icon);
-    width: var(--icon-special-input-size);
-    height: var(--icon-special-input-size);
-}
-
 /*Change the DELETE icon*/
-div[name*="AttachmentsTable"] a[name*="Delete"] .button-icon {
+div[name*="ListViewTable"] a[name*="Delete"] .button-icon {
    content: var(--trash-icon);
     width: var(--icon-special-input-size);
     height: var(--icon-special-input-size);
 }
 
 /* Tables Header text styling*/
-div[name*="AttachmentsTable"] .grid-column-headers .grid-column-header-text,
+div[name*="ListViewTable"] .grid-column-headers .grid-column-header-text,
 div[name*="DisplayTable"] .grid-column-headers .grid-column-header-text{
     color: white !important;
     height: 38px;
@@ -535,23 +440,6 @@ span[name*= "labelInputContainerWrapper"] input {
     margin : 0px 10px ;
 }
 
-/*Applicant Data and Offernder Data Icons*/
-
-span[name*= "RequesterName"] .inputIcon{
-    content : var(--user-icon);
-}
-
-span[name*= "EmployeeNumber"] .inputIcon{
-    content : var(--employeeNumber-icon);
-}
-
-span[name*= "Department"] .inputIcon{
-    content : var(--department-icon);
-}
-
-span[name*= "Job"] .inputIcon{
-    content : var(--job-icon);
-}
 
 span[name*= "OffenderName"] .picker-search {
     background-image: var(--search-icon);
@@ -585,9 +473,16 @@ div[name*= "CardListViewWithAdd"] .grid-header {
 
 
 [name*="Submit"], 
-[name *= "Cancel"] {
+[name *= "Cancel"],
+[name *= "Add"]{
     background: #7c1424 !important;
     border: 1px solid #7c1424 !important;
+    height: var(--input-height) !important;
+    border-radius: var(--button-border-radius);
+}
+
+div[name*= "footer"] {
+    background: var(--primary-bg-color) !important;
 }
 
 
