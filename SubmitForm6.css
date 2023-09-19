@@ -51,6 +51,7 @@
     --calendar-icon : url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/calendar.png");
 }
 
+
 /* HEADER  STYLING */
 
 div[name*="Navbar"] {
@@ -82,7 +83,7 @@ div[name*="Navbar"] * {
 
 /* Form styling*/
 .theme-entry .form {
-    background: var(--primary-bg-color);
+    background: var(--primary-bg-color) !important;
 }
 
 /*Card Styling*/
@@ -156,13 +157,15 @@ span[name*= "labelInputContainer"] textarea {
 }
 
 span[name*= "labelInputContainer"],
-span[name*= "labelInputSpecialContainer"]{
+span[name*= "labelInputSpecialContainer"],
+span[name*= "ChoicesInput"]{
     margin-top: 10px !important;
 }
 
 /* Label styling */
 span[name*= "labelInputContainer"] > span,
-span[name*= "labelInputSpecialContainer"] > span{
+span[name*= "labelInputSpecialContainer"] > span,
+span[name*= "ChoicesInput"] > span{
     font-size: var(--input-font-size) !important;
     font-weight: bold;
     color: var(--secondary-color) !important;
@@ -175,10 +178,10 @@ span[name*= "labelInputSpecialContainer"] .input-control-wrapper .editable-area.
     height: 100% !important;
 }
 
-span[name*= "labelInputSpecialContainer"] span.entity {
+/* span[name*= "labelInputSpecialContainer"] span.entity {
     display: flex;
     align-items: center;
-}
+} */
 
 span[name*= "labelInputContainer"] input,
 span[name*= "labelInputContainer"] .input-control-m-c,
@@ -203,9 +206,13 @@ span[name*= "labelInputContainer"] .input-control-m-c .editable-area.input-contr
     height: 100% !important;
 }
 
+span[name*= "labelInputSpecialContainer"] .input-control-buttons a:hover {
+    background: transparent !important;
+}
+
 /* Tabs Styling */
 
-ul.tab-box-tabs {
+.basicForm ul.tab-box-tabs {
     padding: 0px !important;
     width: 100% !important;
     position: fixed !important;
@@ -218,24 +225,24 @@ ul.tab-box-tabs {
    
     
 }
-ul.tab-box-tabs li:has(.selected) {
+.basicForm ul.tab-box-tabs li:has(.selected) {
        border-bottom: 2px solid var(--card-title-color);
 }  
-ul.tab-box-tabs li {
+.basicForm ul.tab-box-tabs li {
    padding: 7px !important;
     margin-left: 15px !important;
 }
 
-ul.tab-box-tabs .selected {
+.basicForm ul.tab-box-tabs .selected {
     background: transparent !important;
 }
 
-ul.tab-box-tabs a.selected  span {
+.basicForm ul.tab-box-tabs a.selected  span {
     color: var(--card-title-color) !important;
 
 }
 
-ul.tab-box-tabs li a span {
+.basicForm ul.tab-box-tabs li a span {
     background: transparent !important;
     font-size: var(--navbar-font-size);
 }
@@ -283,7 +290,7 @@ span[name*= "labelInputSpecialContainer"] > div {
     border: 1px solid var(--card-border-input-color) !important;
     border-radius: 8px !important;
     box-sizing: border-box;
-    /* padding: 0px 10px; */
+    padding: 0px 10px;
 }
 
 span[name*= "labelInputSearchContainer"] a {
