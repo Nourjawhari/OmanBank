@@ -471,9 +471,8 @@ div[name*= "CardListViewWithAdd"] .grid-header {
     margin: 0px !important
 }
 
-
-[name*="Submit"], 
-[name *= "Cancel"],
+ 
+[name *= "Button"],
 [name *= "Add"]{
     background: #7c1424 !important;
     border: 1px solid #7c1424 !important;
@@ -481,8 +480,20 @@ div[name*= "CardListViewWithAdd"] .grid-header {
     border-radius: var(--button-border-radius);
 }
 
+[name*="Submit"] {
+    background: #7c1424 !important;
+    border: 1px solid #7c1424 !important;
+}
+
+[name *= "Cancel"] {
+    background: white !important;
+    border: 1px solid #7c1424 !important;
+}
+
 div[name*= "footer"] {
     background: var(--primary-bg-color) !important;
 }
 
-
+li:empty {
+    display: none;
+}
