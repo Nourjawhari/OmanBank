@@ -470,15 +470,15 @@ div[name*= "CardListViewWithAdd"] .grid-header {
 }
 
  
-[name *= "Button"],
+[name *= "Submit"],
+[name *= "Cancel"],
 [name *= "Add"]{
-    background: #7c1424 !important;
-    border: 1px solid #7c1424 !important;
     height: var(--input-height) !important;
     border-radius: var(--button-border-radius);
 }
 
-[name*="Submit"] {
+[name*="Submit"],
+[name *= "Add"]{
     background: #7c1424 !important;
     border: 1px solid #7c1424 !important;
 }
